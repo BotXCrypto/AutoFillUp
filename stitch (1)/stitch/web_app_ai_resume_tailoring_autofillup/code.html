@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Resume Tailoring | Cognitive Vault</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed-variant": "#343d96",
+              "surface-dim": "#c7dde9",
+              "on-secondary-fixed": "#00105c",
+              "on-primary-container": "#8690ee",
+              "on-tertiary": "#ffffff",
+              "primary-fixed": "#e0e0ff",
+              "secondary-fixed": "#dee0ff",
+              "secondary-container": "#8596ff",
+              "surface-tint": "#4c56af",
+              "inverse-primary": "#bdc2ff",
+              "background": "#f3faff",
+              "outline": "#767683",
+              "tertiary": "#002103",
+              "on-tertiary-container": "#5aa958",
+              "on-secondary": "#ffffff",
+              "primary-container": "#1a237e",
+              "surface-container-highest": "#cfe6f2",
+              "on-secondary-fixed-variant": "#293ca0",
+              "on-tertiary-fixed-variant": "#005312",
+              "tertiary-fixed-dim": "#88d982",
+              "on-primary": "#ffffff",
+              "outline-variant": "#c6c5d4",
+              "tertiary-fixed": "#a3f69c",
+              "on-primary-fixed": "#000767",
+              "on-error-container": "#93000a",
+              "on-background": "#071e27",
+              "surface": "#f3faff",
+              "surface-container-lowest": "#ffffff",
+              "surface-bright": "#f3faff",
+              "primary": "#000666",
+              "on-surface": "#071e27",
+              "surface-variant": "#cfe6f2",
+              "error": "#ba1a1a",
+              "tertiary-container": "#003909",
+              "secondary": "#4355b9",
+              "inverse-on-surface": "#dff4ff",
+              "inverse-surface": "#1e333c",
+              "on-secondary-container": "#11278e",
+              "on-error": "#ffffff",
+              "surface-container-low": "#e6f6ff",
+              "surface-container-high": "#d5ecf8",
+              "on-tertiary-fixed": "#002204",
+              "on-surface-variant": "#454652",
+              "error-container": "#ffdad6",
+              "surface-container": "#dbf1fe",
+              "primary-fixed-dim": "#bdc2ff",
+              "secondary-fixed-dim": "#bac3ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-panel {
+        background: rgba(243, 250, 255, 0.8);
+        backdrop-filter: blur(12px);
+      }
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: #cfe6f2; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface overflow-hidden h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-8 py-4 sticky top-0 z-50 bg-[#f3faff] dark:bg-[#071e27]">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black text-[#000666] dark:text-[#ffffff] font-headline tracking-tight">AutoFillUp</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-[#071e27]/60 dark:text-[#cfe6f2]/60 font-headline font-bold tracking-tight hover:text-[#1a237e] transition-colors" href="#">Dashboard</a>
+<a class="text-[#000666] dark:text-[#ffffff] border-b-2 border-[#000666] dark:border-[#8596ff] pb-1 font-headline font-bold tracking-tight" href="#">Tailor AI</a>
+<a class="text-[#071e27]/60 dark:text-[#cfe6f2]/60 font-headline font-bold tracking-tight hover:text-[#1a237e] transition-colors" href="#">Security</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer p-2 rounded-full hover:bg-surface-container-high transition-colors" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-primary cursor-pointer p-2 rounded-full hover:bg-surface-container-high transition-colors" data-icon="settings">settings</span>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="User Profile" data-alt="Close-up portrait of a professional man in a suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSfKtTsdEUg_mHhzdP6USQ2QhFNxyN2OvD_4eu53FriT1ELM2kYpHF0x4Yp44syEi6mijifRXxUam_SCve2WFn2g2JQzs8rC5SlT3fY4Dl9Jdts48QG80RMknytdGRumJ19Di4jouwDAesANgd5d-s75RCbdVzSJtKa9DeHJOlHAizh7TmreTHlbV2VN1LO01ltOXYWY2YnoZSfnK8o3K-revsBEzu7gxch1C2EPtiIYN9RHPWBEc7aM89K9KdRbaVz3X0hEhohg4"/>
+</div>
+</div>
+</header>
+<div class="bg-[#e6f6ff] dark:bg-[#0d2a35] h-[1px] w-full"></div>
+<main class="flex-1 flex overflow-hidden">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 flex flex-col gap-2 pr-4 bg-[#e6f6ff] dark:bg-[#0d2a35] font-body text-sm font-medium shadow-[4px_0_24px_rgba(7,30,39,0.04)] pt-6">
+<div class="px-6 mb-6">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-headline font-bold text-[#000666]">AutoFillUp Vault</span>
+</div>
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">Military-grade encryption</span>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 py-3 px-6 text-[#071e27]/70 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span> All Documents
+                </a>
+<a class="flex items-center gap-3 py-3 px-6 bg-[#ffffff] text-[#000666] rounded-r-xl shadow-sm scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span> Resumes
+                </a>
+<a class="flex items-center gap-3 py-3 px-6 text-[#071e27]/70 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span> Cover Letters
+                </a>
+<a class="flex items-center gap-3 py-3 px-6 text-[#071e27]/70 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="verified">verified</span> Certificates
+                </a>
+<a class="flex items-center gap-3 py-3 px-6 text-[#071e27]/70 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span> Archived
+                </a>
+</div>
+<div class="mt-auto p-6">
+<button class="w-full py-4 bg-gradient-to-r from-primary to-primary-container text-white rounded-xl font-bold shadow-lg flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span> Upload New Doc
+                </button>
+</div>
+</aside>
+<!-- Editor Content -->
+<div class="flex-1 flex flex-col p-6 gap-6 bg-surface overflow-hidden">
+<!-- Header Section -->
+<div class="flex justify-between items-end">
+<div>
+<h1 class="text-3xl font-headline font-extrabold text-primary tracking-tight">Tailor AI Preview</h1>
+<p class="text-on-surface-variant">Optimizing "Senior_Engineer_Resume_v4.pdf" for relevance.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 bg-surface-container-lowest text-primary border border-outline-variant/20 rounded-xl font-semibold flex items-center gap-2 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="history">history</span> History
+                    </button>
+<button class="px-6 py-2.5 bg-gradient-to-br from-primary to-primary-container text-white rounded-xl font-bold shadow-md flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="save">save</span> Save as New Version
+                    </button>
+</div>
+</div>
+<!-- Main Split View -->
+<div class="flex-1 flex gap-6 overflow-hidden">
+<!-- Left Column: Job Description -->
+<div class="w-2/5 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h2 class="font-headline font-bold text-lg text-primary">Job Description</h2>
+<span class="text-xs font-bold text-on-surface-variant flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> ANALYZING
+                        </span>
+</div>
+<div class="flex-1 bg-surface-container-low rounded-xl p-6 relative flex flex-col gap-4">
+<textarea class="flex-1 bg-transparent border-none focus:ring-0 text-sm leading-relaxed resize-none p-0 placeholder:text-outline-variant font-body" placeholder="Paste the target job description here to let AutoFillUp extract key requirements..."></textarea>
+<!-- AI Insights Card -->
+<div class="glass-panel p-4 rounded-xl shadow-sm border border-outline-variant/10">
+<h3 class="text-xs font-black uppercase tracking-wider text-primary mb-3">AI Keyword Extraction</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded-full text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span> Python
+                                </span>
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded-full text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span> React
+                                </span>
+<span class="px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded-full text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span> AWS
+                                </span>
+<span class="px-3 py-1 bg-surface-container-highest text-primary/60 rounded-full text-xs font-bold">Microservices</span>
+<span class="px-3 py-1 bg-surface-container-highest text-primary/60 rounded-full text-xs font-bold">PostgreSQL</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Tailored Preview -->
+<div class="w-3/5 flex flex-col gap-4 relative">
+<div class="flex items-center justify-between">
+<h2 class="font-headline font-bold text-lg text-primary">Tailored Preview</h2>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="text-sm font-bold text-on-surface-variant">Match Score:</span>
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-highest" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-on-tertiary-container" cx="24" cy="24" fill="transparent" r="20" stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="18.8" stroke-width="4"></circle>
+</svg>
+<span class="absolute text-[10px] font-black">85%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Resume Preview -->
+<div class="flex-1 bg-surface-container-lowest rounded-xl shadow-xl overflow-y-auto p-8 font-body border border-outline-variant/10">
+<!-- Resume Header -->
+<div class="text-center mb-8">
+<h3 class="text-2xl font-headline font-extrabold text-primary mb-1">Alex Sterling</h3>
+<p class="text-sm text-on-surface-variant">San Francisco, CA • alex.sterling@email.com • (555) 123-4567</p>
+</div>
+<!-- Suggestions / Highlights Section -->
+<div class="mb-8 space-y-4">
+<!-- Suggestion 1 -->
+<div class="relative group">
+<div class="absolute -left-4 top-0 bottom-0 w-1 bg-on-tertiary-container rounded-full"></div>
+<div class="bg-tertiary-fixed-dim/10 p-4 rounded-xl border border-tertiary-fixed-dim/30">
+<div class="flex items-start justify-between mb-2">
+<span class="text-[10px] font-black uppercase text-on-tertiary-fixed-variant px-2 py-0.5 bg-tertiary-fixed rounded">Reordered for relevance</span>
+<div class="flex gap-2">
+<button class="p-1 rounded-lg bg-white shadow-sm hover:text-on-tertiary-container transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</button>
+<button class="p-1 rounded-lg bg-white shadow-sm hover:text-error transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="close">close</span>
+</button>
+</div>
+</div>
+<p class="font-bold text-primary text-sm mb-1">Senior Software Engineer | TechFlow Inc.</p>
+<ul class="text-sm list-disc pl-5 space-y-1 text-on-surface">
+<li class="font-semibold text-on-tertiary-fixed-variant">Spearheaded the migration of legacy monolith to <span class="bg-tertiary-fixed px-1">Python-based microservices</span> on <span class="bg-tertiary-fixed px-1">AWS</span>.</li>
+<li class="opacity-60">Mentored junior developers and established code review best practices.</li>
+</ul>
+</div>
+</div>
+<!-- Suggestion 2 -->
+<div class="relative group">
+<div class="absolute -left-4 top-0 bottom-0 w-1 bg-secondary rounded-full"></div>
+<div class="bg-secondary-fixed/10 p-4 rounded-xl border border-secondary-fixed/30">
+<div class="flex items-start justify-between mb-2">
+<span class="text-[10px] font-black uppercase text-on-secondary-fixed-variant px-2 py-0.5 bg-secondary-fixed rounded">Added keywords: [React]</span>
+<div class="flex gap-2">
+<button class="p-1 rounded-lg bg-white shadow-sm hover:text-on-tertiary-container transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="check">check</span>
+</button>
+<button class="p-1 rounded-lg bg-white shadow-sm hover:text-error transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="close">close</span>
+</button>
+</div>
+</div>
+<p class="font-bold text-primary text-sm mb-1">Full-stack Developer | InnovateX</p>
+<ul class="text-sm list-disc pl-5 space-y-1 text-on-surface">
+<li>Architected high-performance dashboard using <span class="bg-secondary-fixed text-on-secondary-fixed-variant px-1 font-bold">React and Redux</span> for real-time data visualization.</li>
+<li class="opacity-60">Optimized SQL queries reducing page load times by 40%.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Standard Sections -->
+<div class="space-y-6">
+<div>
+<h4 class="text-xs font-black uppercase tracking-widest text-primary border-b border-surface-container-high pb-1 mb-3">Education</h4>
+<div class="text-sm">
+<p class="font-bold">B.S. Computer Science</p>
+<p class="text-on-surface-variant">Stanford University • 2016-2020</p>
+</div>
+</div>
+<div>
+<h4 class="text-xs font-black uppercase tracking-widest text-primary border-b border-surface-container-high pb-1 mb-3">Skills</h4>
+<p class="text-sm leading-relaxed">
+<span class="font-bold">Languages:</span> Python, JavaScript, SQL, C++, TypeScript<br/>
+<span class="font-bold">Frameworks:</span> React, Node.js, Django, FastAPI<br/>
+<span class="font-bold">Cloud &amp; Tools:</span> AWS (EC2, S3, Lambda), Docker, Kubernetes, Jenkins
+                                </p>
+</div>
+</div>
+</div>
+<!-- AI Processing Overlay (Subtle Gradient Toast) -->
+<div class="absolute bottom-6 right-6 left-6">
+<div class="glass-panel p-4 rounded-2xl flex items-center justify-between border border-white/20 shadow-2xl">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full border-2 border-t-secondary border-r-tertiary-fixed border-b-secondary border-l-surface animate-spin"></div>
+<div>
+<p class="text-xs font-bold text-primary">Intelligence at Work</p>
+<p class="text-[10px] text-on-surface-variant">Refining professional summary for maximum impact...</p>
+</div>
+</div>
+<button class="text-xs font-bold text-secondary hover:underline">View Live Logs</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Floating Strip (Contextual) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 px-8 py-4 glass-panel rounded-full shadow-2xl flex items-center gap-8 border border-white/50 z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-tertiary-container" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-xs font-bold">Encrypted Workspace</span>
+</div>
+<div class="w-[1px] h-4 bg-outline-variant"></div>
+<div class="flex gap-4">
+<button class="text-xs font-bold text-primary hover:opacity-70 transition-opacity">Reset Changes</button>
+<button class="text-xs font-bold text-primary hover:opacity-70 transition-opacity">Export PDF</button>
+</div>
+</div>
+</body></html>

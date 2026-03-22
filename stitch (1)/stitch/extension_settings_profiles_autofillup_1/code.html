@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AutoFillUp - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#ffffff",
+              "on-primary-container": "#8690ee",
+              "primary-container": "#1a237e",
+              "on-background": "#071e27",
+              "on-primary-fixed-variant": "#343d96",
+              "primary-fixed-dim": "#bdc2ff",
+              "tertiary-fixed-dim": "#88d982",
+              "tertiary-container": "#003909",
+              "on-tertiary-fixed": "#002204",
+              "on-surface": "#071e27",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#e0e0ff",
+              "on-error": "#ffffff",
+              "on-surface-variant": "#454652",
+              "on-tertiary": "#ffffff",
+              "tertiary": "#002103",
+              "on-error-container": "#93000a",
+              "on-secondary": "#ffffff",
+              "on-tertiary-container": "#5aa958",
+              "background": "#f3faff",
+              "error-container": "#ffdad6",
+              "tertiary-fixed": "#a3f69c",
+              "on-primary-fixed": "#000767",
+              "inverse-primary": "#bdc2ff",
+              "surface-tint": "#4c56af",
+              "on-secondary-fixed": "#00105c",
+              "inverse-surface": "#1e333c",
+              "surface-variant": "#cfe6f2",
+              "on-secondary-container": "#11278e",
+              "surface-dim": "#c7dde9",
+              "secondary-fixed-dim": "#bac3ff",
+              "outline": "#767683",
+              "on-tertiary-fixed-variant": "#005312",
+              "surface-container-high": "#d5ecf8",
+              "primary": "#000666",
+              "surface-container-highest": "#cfe6f2",
+              "secondary-container": "#8596ff",
+              "error": "#ba1a1a",
+              "surface-container": "#dbf1fe",
+              "secondary-fixed": "#dee0ff",
+              "outline-variant": "#c6c5d4",
+              "inverse-on-surface": "#dff4ff",
+              "on-secondary-fixed-variant": "#293ca0",
+              "surface-bright": "#f3faff",
+              "secondary": "#4355b9",
+              "surface-container-low": "#e6f6ff",
+              "surface": "#f3faff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3faff;
+            color: #071e27;
+        }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background min-h-[600px] w-[380px] mx-auto overflow-x-hidden border-x border-outline-variant/10 shadow-2xl">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-gradient-to-b from-[#f3faff] to-[#e6f6ff] z-50">
+<div class="flex items-center justify-between px-4 py-3 w-full max-w-md mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#1A237E]" data-icon="shield_lock">shield_lock</span>
+<h1 class="font-manrope font-extrabold text-[#000666] tracking-tighter text-xl">AutoFillUp</h1>
+</div>
+<button class="text-[#1A237E] hover:bg-[#cfe6f2]/20 transition-colors active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<main class="px-5 py-6 space-y-8">
+<!-- Profile Selection Section -->
+<section class="space-y-4">
+<div class="flex items-baseline justify-between"><h2 class="font-manrope font-bold text-primary tracking-tight text-lg">Active Profile</h2><button class="text-[10px] font-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors flex items-center gap-1">Switch Profile <span class="material-symbols-outlined text-xs" data-icon="swap_horiz">swap_horiz</span></button></div>
+<div class="relative group">
+<div class="absolute inset-0 bg-primary/5 blur-xl group-hover:bg-primary/10 transition-all rounded-full"></div>
+<div class="relative bg-surface-container-lowest p-5 rounded-2xl shadow-sm border border-primary/10 flex items-center justify-between cursor-pointer hover:border-primary/30 transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center text-on-primary shadow-inner">
+<span class="material-symbols-outlined text-2xl" data-icon="terminal">terminal</span>
+</div>
+<div>
+<p class="font-body font-bold text-on-surface text-sm">Software Engineer</p>
+<p class="text-xs text-on-surface-variant">Backend &amp; Security Focus</p>
+</div>
+</div>
+<div class="bg-surface-container-high p-1.5 rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="unfold_more">unfold_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- AI Provider Selection (Bento Style) -->
+<section class="space-y-4">
+<h2 class="font-manrope font-bold text-primary tracking-tight text-lg px-1">Processing Engine</h2>
+<div class="grid grid-cols-2 gap-3">
+<!-- Groq Option -->
+<div class="bg-surface-container-highest/40 p-4 rounded-xl border border-transparent hover:border-primary/20 transition-all cursor-pointer group active:scale-[0.98]">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="bolt">bolt</span>
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+<p class="font-body font-bold text-primary text-sm">Groq</p>
+<p class="text-[10px] text-on-surface-variant font-medium">Fast Cloud</p>
+</div>
+<!-- Ollama Option -->
+<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/10 hover:border-secondary/20 transition-all cursor-pointer group active:scale-[0.98]">
+<div class="flex justify-between items-start mb-6">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl" data-icon="memory">memory</span>
+</div>
+<p class="font-body font-bold text-on-surface text-sm">Ollama</p>
+<p class="text-[10px] text-on-surface-variant font-medium">Local Offline</p>
+</div>
+</div>
+</section>
+<!-- Security Settings -->
+<section class="space-y-4">
+<h2 class="font-manrope font-bold text-primary tracking-tight text-lg px-1">Vault Security</h2>
+<div class="space-y-2">
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-on-surface">Auto-lock Vault</span>
+<span class="text-xs text-on-surface-variant">After 15 minutes inactivity</span>
+</div>
+<div class="w-10 h-5 bg-primary rounded-full relative shadow-inner">
+<div class="absolute right-0.5 top-0.5 w-4 h-4 bg-white rounded-full shadow-md"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-surface-container-highest transition-colors">
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-on-surface">Master Password</span>
+<span class="text-xs text-on-surface-variant">Last reset: 42 days ago</span>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-transform" data-icon="arrow_forward_ios" style="font-size: 16px;">arrow_forward_ios</span>
+</div>
+</div>
+</section>
+<!-- About Section (Asymmetric Editorial Style) -->
+<section class="pt-4 pb-12">
+<div class="bg-primary p-6 rounded-2xl relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-secondary/20 rounded-full blur-3xl"></div>
+<div class="relative z-10 flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold rounded-full uppercase tracking-tighter">Verified</span>
+<span class="text-primary-fixed text-[10px] font-medium opacity-80 uppercase tracking-widest">Zero-Knowledge</span>
+</div>
+<div>
+<h3 class="font-manrope font-extrabold text-on-primary text-xl leading-tight">Secured by Design.</h3>
+<p class="text-on-primary-container text-xs mt-1 font-medium">Your data never leaves the vault unencrypted.</p>
+</div>
+<div class="flex items-center justify-between mt-2 pt-4 border-t border-white/10">
+<span class="text-white/40 text-[10px] font-bold tracking-widest uppercase">v1.0.4 - Alpha</span>
+<button class="text-on-primary font-bold text-xs flex items-center gap-1 hover:underline">
+                            Documentation <span class="material-symbols-outlined text-[14px]" data-icon="open_in_new">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-[#e6f6ff]/80 backdrop-blur-md shadow-[0_-4px_24px_rgba(7,30,39,0.04)]">
+<!-- Active: Groq (Contextual mapping for engine choice) -->
+<div class="flex flex-col items-center justify-center bg-[#ffffff] text-[#1A237E] rounded-xl px-6 py-1.5 shadow-sm active:scale-98 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span class="font-inter text-[10px] font-medium tracking-wide uppercase mt-1">Groq</span>
+</div>
+<!-- Inactive: Ollama -->
+<div class="flex flex-col items-center justify-center text-[#5a7181] px-6 py-1.5 opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+<span class="material-symbols-outlined" data-icon="memory">memory</span>
+<span class="font-inter text-[10px] font-medium tracking-wide uppercase mt-1">Ollama</span>
+</div>
+</nav>
+<!-- Navigation Drawer (Off-screen by default in popups, represented for structure) -->
+<div class="hidden fixed left-0 top-0 h-full w-64 z-40 bg-[#ffffff] rounded-r-xl shadow-2xl shadow-[#071e27]/10 flex-col py-6 px-4">
+<h2 class="font-inter text-sm font-semibold text-[#000666] mb-6 px-2">Data Selection</h2>
+<div class="space-y-1">
+<div class="flex items-center gap-3 p-3 bg-[#e6f6ff] text-[#1A237E] rounded-lg">
+<span class="material-symbols-outlined" data-icon="search_check">search_check</span>
+<span class="font-inter text-sm font-semibold">Detected</span>
+</div>
+<div class="flex items-center gap-3 p-3 text-[#5a7181] hover:bg-[#f3faff] transition-colors rounded-lg">
+<span class="material-symbols-outlined" data-icon="error_outline">error_outline</span>
+<span class="font-inter text-sm font-semibold">Missing</span>
+</div>
+<div class="flex items-center gap-3 p-3 text-[#5a7181] hover:bg-[#f3faff] transition-colors rounded-lg">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-inter text-sm font-semibold">Profiles</span>
+</div>
+</div>
+</div>
+</body></html>

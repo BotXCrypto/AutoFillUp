@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AutoFillUp Settings - The Digital Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#bcc2ff",
+              "secondary-container": "#96a5ff",
+              "outline": "#757684",
+              "primary-fixed": "#dfe0ff",
+              "on-primary-fixed": "#000c62",
+              "background": "#f8f9fa",
+              "error": "#ba1a1a",
+              "primary": "#2b3896",
+              "tertiary-fixed-dim": "#55d7ed",
+              "on-tertiary-fixed": "#001f24",
+              "on-primary": "#ffffff",
+              "inverse-surface": "#2e3132",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-container": "#cbcfff",
+              "surface-container-highest": "#e1e3e4",
+              "on-tertiary-container": "#64e3f9",
+              "secondary-fixed-dim": "#bac3ff",
+              "on-secondary": "#ffffff",
+              "secondary": "#4858ab",
+              "on-secondary-container": "#27378a",
+              "surface": "#f8f9fa",
+              "on-secondary-fixed": "#00105b",
+              "primary-container": "#4551af",
+              "tertiary-fixed": "#9eefff",
+              "on-error": "#ffffff",
+              "on-surface-variant": "#454652",
+              "surface-bright": "#f8f9fa",
+              "error-container": "#ffdad6",
+              "on-background": "#191c1d",
+              "tertiary": "#004a54",
+              "surface-container-high": "#e7e8e9",
+              "on-surface": "#191c1d",
+              "surface-container-low": "#f3f4f5",
+              "on-tertiary": "#ffffff",
+              "outline-variant": "#c5c5d4",
+              "on-secondary-fixed-variant": "#2f3f92",
+              "secondary-fixed": "#dee0ff",
+              "on-primary-fixed-variant": "#303c9a",
+              "on-tertiary-fixed-variant": "#004e59",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-dim": "#d9dadb",
+              "surface-variant": "#e1e3e4",
+              "surface-container": "#edeeef",
+              "inverse-primary": "#bcc2ff",
+              "on-error-container": "#93000a",
+              "tertiary-container": "#006471",
+              "surface-tint": "#4955b3"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(16px);
+      }
+      .vault-gradient {
+        background: linear-gradient(135deg, #2b3896 0%, #4551af 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/85 backdrop-blur-lg shadow-sm">
+<div class="flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-indigo-700" data-icon="security">security</span>
+<span class="text-xl font-extrabold tracking-tighter text-indigo-900 font-headline">AutoFillUp</span>
+</div>
+<div class="flex gap-4">
+<button class="text-slate-500 hover:bg-indigo-50 p-2 rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+</div>
+<div class="bg-slate-200/50 h-[1px] w-full absolute bottom-0"></div>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto space-y-8">
+<!-- Hero Section / Contextual Navigation -->
+<section class="space-y-2">
+<h1 class="text-4xl font-headline font-extrabold tracking-tight text-on-surface">Settings</h1>
+<p class="text-on-surface-variant font-medium">Configure your digital sanctuary and intelligence engine.</p>
+</section>
+<!-- Multi-Profile Section (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="md:col-span-4 bg-surface-container-lowest p-6 rounded-xl shadow-[0_12px_40px_rgba(43,56,150,0.04)] border border-outline-variant/20">
+<div class="flex items-start justify-between">
+<div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary mb-1 block">Active Identity</span>
+<h2 class="text-2xl font-headline font-bold text-on-surface">Software Engineer - Backend</h2>
+</div>
+<button class="bg-surface-container-low p-2 rounded-xl text-primary hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="unfold_more">unfold_more</span>
+</button>
+</div>
+<div class="mt-8 flex flex-wrap gap-3">
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant/10">
+<span class="material-symbols-outlined text-sm" data-icon="work" style="font-variation-settings: 'FILL' 1;">work</span>
+<span class="text-sm font-semibold">Professional</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant/10">
+<span class="material-symbols-outlined text-sm" data-icon="code" style="font-variation-settings: 'FILL' 1;">code</span>
+<span class="text-sm font-semibold">Tech Stack</span>
+</div>
+<button class="flex items-center gap-2 text-primary font-bold text-sm px-4 py-2 hover:bg-indigo-50 rounded-full transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                        Create Profile
+                    </button>
+</div>
+</div>
+</section>
+<!-- Processing Engine Section -->
+<section class="space-y-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary" data-icon="psychology">psychology</span>
+<h3 class="text-lg font-headline font-bold">Processing Engine</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Option 1: Groq -->
+<div class="relative p-5 rounded-xl border-2 border-primary bg-surface-container-lowest shadow-sm group">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg vault-gradient flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Groq</p>
+<p class="text-xs text-on-surface-variant">Fast Cloud</p>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full border-4 border-primary bg-primary"></div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">Ultra-fast inference using cloud-based LPU™ technology. Best for complex forms.</p>
+<div class="h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full vault-gradient w-3/4"></div>
+</div>
+</div>
+<!-- Option 2: Ollama -->
+<div class="relative p-5 rounded-xl border border-outline-variant/30 bg-surface-container-low hover:bg-surface-container-lowest transition-all group">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="dns">dns</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Ollama</p>
+<p class="text-xs text-on-surface-variant">Local Offline</p>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant"></div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-4">Privacy-first processing on your local hardware. No data ever leaves your device.</p>
+<div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-outline-variant w-0"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Vault Security Section -->
+<section class="space-y-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary" data-icon="encrypted">encrypted</span>
+<h3 class="text-lg font-headline font-bold">Vault Security</h3>
+</div>
+<div class="bg-surface-container rounded-2xl overflow-hidden divide-y divide-outline-variant/10">
+<!-- Row: Auto-lock -->
+<div class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="timer">timer</span>
+</div>
+<div>
+<p class="font-bold">Auto-lock</p>
+<p class="text-xs text-on-surface-variant">Lock vault after 15 minutes of inactivity</p>
+</div>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<div class="w-11 h-6 bg-primary rounded-full"></div>
+<div class="absolute left-6 top-1 bg-white w-4 h-4 rounded-full transition-transform"></div>
+</div>
+</div>
+<!-- Row: Master Password -->
+<div class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="key">key</span>
+</div>
+<div>
+<p class="font-bold">Master Password</p>
+<p class="text-xs text-on-surface-variant">Required for every new session</p>
+</div>
+</div>
+<button class="text-primary font-bold text-sm px-4 py-2 hover:bg-white rounded-lg transition-all border border-transparent active:border-primary/20">
+                        Change
+                    </button>
+</div>
+<!-- Row: Biometric Unlock -->
+<div class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined" data-icon="fingerprint">fingerprint</span>
+</div>
+<div>
+<p class="font-bold">Touch ID / Windows Hello</p>
+<p class="text-xs text-on-surface-variant">Enable biometric authentication</p>
+</div>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<div class="w-11 h-6 bg-surface-container-highest rounded-full"></div>
+<div class="absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Advanced Area -->
+<section class="mt-12 p-6 rounded-2xl border-2 border-error/10 bg-error/5 space-y-4">
+<h4 class="text-error font-bold text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+                DANGER ZONE
+            </h4>
+<div class="flex items-center justify-between">
+<div>
+<p class="font-bold text-on-surface">Purge Vault Data</p>
+<p class="text-xs text-on-surface-variant">Irreversibly delete all profiles and credentials</p>
+</div>
+<button class="bg-error text-on-error px-5 py-2 rounded-xl text-sm font-bold shadow-lg shadow-error/20 active:scale-95 transition-transform">
+                    Purge All
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white shadow-[0_-4px_20px_rgba(43,56,150,0.08)] rounded-t-2xl z-50">
+<a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 hover:text-indigo-500 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="lock">lock</span>
+<span class="font-manrope text-[11px] font-semibold uppercase tracking-wider">Vault</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 hover:text-indigo-500 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="analytics">analytics</span>
+<span class="font-manrope text-[11px] font-semibold uppercase tracking-wider">Tracker</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-indigo-50 text-indigo-700 rounded-xl px-5 py-2 shadow-[0_0_15px_rgba(43,56,150,0.1)] active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-manrope text-[11px] font-semibold uppercase tracking-wider">Settings</span>
+</a>
+</nav>
+<!-- Floating Background Elements for Depth -->
+<div class="fixed top-20 right-[-10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-20 left-[-10%] w-[30%] h-[30%] bg-tertiary/5 rounded-full blur-[80px] pointer-events-none -z-10"></div>
+</body></html>

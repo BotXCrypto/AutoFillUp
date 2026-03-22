@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AutoFillUp - Adaptive Data</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#ffffff",
+              "on-primary-container": "#8690ee",
+              "primary-container": "#1a237e",
+              "on-background": "#071e27",
+              "on-primary-fixed-variant": "#343d96",
+              "primary-fixed-dim": "#bdc2ff",
+              "tertiary-container": "#003909",
+              "on-tertiary-fixed": "#002204",
+              "on-surface": "#071e27",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#e0e0ff",
+              "on-error": "#ffffff",
+              "on-surface-variant": "#454652",
+              "on-tertiary": "#ffffff",
+              "tertiary": "#002103",
+              "on-error-container": "#93000a",
+              "on-secondary": "#ffffff",
+              "on-tertiary-container": "#5aa958",
+              "background": "#f3faff",
+              "error-container": "#ffdad6",
+              "tertiary-fixed": "#a3f69c",
+              "on-primary-fixed": "#000767",
+              "inverse-primary": "#bdc2ff",
+              "surface-tint": "#4c56af",
+              "on-secondary-fixed": "#00105c",
+              "inverse-surface": "#1e333c",
+              "surface-variant": "#cfe6f2",
+              "on-secondary-container": "#11278e",
+              "surface-dim": "#c7dde9",
+              "secondary-fixed-dim": "#bac3ff",
+              "outline": "#767683",
+              "on-tertiary-fixed-variant": "#005312",
+              "surface-container-high": "#d5ecf8",
+              "primary": "#000666",
+              "surface-container-highest": "#cfe6f2",
+              "secondary-container": "#8596ff",
+              "error": "#ba1a1a",
+              "surface-container": "#dbf1fe",
+              "secondary-fixed": "#dee0ff",
+              "outline-variant": "#c6c5d4",
+              "inverse-on-surface": "#dff4ff",
+              "on-secondary-fixed-variant": "#293ca0",
+              "surface-bright": "#f3faff",
+              "secondary": "#4355b9",
+              "surface-container-low": "#e6f6ff",
+              "surface": "#f3faff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        width: 380px;
+        min-height: 500px;
+        overflow-x: hidden;
+      }
+      .amber-highlight {
+        background: linear-gradient(135deg, #fffcf0 0%, #fff4cc 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background font-body text-on-surface">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-gradient-to-b from-[#f3faff] to-[#e6f6ff] z-50">
+<div class="flex items-center justify-between px-4 py-3 w-full max-w-md mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#1A237E]" data-icon="shield_lock">shield_lock</span>
+<h1 class="font-manrope font-extrabold text-[#000666] tracking-tighter text-xl">AutoFillUp</h1>
+</div>
+<button class="text-[#5a7181] hover:bg-[#cfe6f2]/20 transition-colors p-1 rounded-lg active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<main class="px-4 pb-24 pt-2">
+<!-- AI Insight Banner -->
+<div class="mb-6 rounded-xl p-4 bg-surface-container-highest border-l-4 border-secondary shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 p-2 opacity-10">
+<span class="material-symbols-outlined text-4xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<p class="font-headline font-bold text-primary text-sm mb-1">Incomplete Detection</p>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                AutoFillUp is learning. These values will be saved to your secure profile.
+            </p>
+</div>
+<!-- Missing Fields List (Adaptive View) -->
+<div class="space-y-5">
+<h2 class="font-headline font-bold text-primary text-base px-1">Detected Gaps</h2>
+<!-- Field 1 -->
+<div class="amber-highlight rounded-xl p-4 shadow-sm transition-all duration-300">
+<div class="flex items-start justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#b58105]" data-icon="error_outline">error_outline</span>
+<label class="font-inter text-sm font-semibold text-[#000666]">Years of Experience in Python</label>
+</div>
+</div>
+<div class="relative group">
+<input class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-2.5 text-sm font-body text-on-surface shadow-[inset_0_1px_2px_rgba(0,0,0,0.05)] focus:ring-2 focus:ring-primary/40 transition-all outline-none" placeholder="e.g. 5" type="text"/>
+<div class="absolute inset-0 rounded-xl border border-outline-variant opacity-10 pointer-events-none"></div>
+</div>
+</div>
+<!-- Field 2 -->
+<div class="amber-highlight rounded-xl p-4 shadow-sm transition-all duration-300">
+<div class="flex items-start justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#b58105]" data-icon="error_outline">error_outline</span>
+<label class="font-inter text-sm font-semibold text-[#000666]">Notice Period</label>
+</div>
+</div>
+<div class="relative group">
+<input class="w-full bg-surface-container-lowest border-none rounded-xl px-4 py-2.5 text-sm font-body text-on-surface shadow-[inset_0_1px_2px_rgba(0,0,0,0.05)] focus:ring-2 focus:ring-primary/40 transition-all outline-none" placeholder="e.g. 1 month" type="text"/>
+<div class="absolute inset-0 rounded-xl border border-outline-variant opacity-10 pointer-events-none"></div>
+</div>
+</div>
+<!-- Field 3 (Bento-style Small Card) -->
+<div class="amber-highlight rounded-xl p-4 shadow-sm transition-all duration-300">
+<div class="flex items-start justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#b58105]" data-icon="error_outline">error_outline</span>
+<label class="font-inter text-sm font-semibold text-[#000666]">Preferred Work Mode</label>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="bg-surface-container-lowest text-xs font-semibold py-2 rounded-lg text-primary hover:bg-primary-fixed-dim transition-colors border border-primary/5">Remote</button>
+<button class="bg-surface-container-lowest text-xs font-semibold py-2 rounded-lg text-primary hover:bg-primary-fixed-dim transition-colors border border-primary/5">Hybrid</button>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="mt-8 mb-4">
+<button class="w-full py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold rounded-xl shadow-lg active:scale-95 transition-all flex items-center justify-center gap-2">
+<span>Save &amp; Fill</span>
+<span class="material-symbols-outlined text-sm" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</button>
+<p class="text-center text-[10px] text-on-surface-variant/60 mt-4 uppercase tracking-widest font-bold">
+                Secured by AutoFillUp v2.4
+            </p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-[#e6f6ff]/80 backdrop-blur-md shadow-[0_-4px_24px_rgba(7,30,39,0.04)] rounded-t-2xl">
+<a class="flex flex-col items-center justify-center text-[#5a7181] px-6 py-1.5 opacity-60 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span class="font-inter text-[10px] font-medium tracking-wide uppercase">Groq</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#ffffff] text-[#1A237E] rounded-xl px-6 py-1.5 shadow-sm active:scale-98 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="memory" style="font-variation-settings: 'FILL' 1;">memory</span>
+<span class="font-inter text-[10px] font-medium tracking-wide uppercase">Ollama</span>
+</a>
+</nav>
+<!-- Navigation Drawer (Conceptual Sidebar for Desktop View / Large Popups) -->
+<div class="hidden fixed left-0 top-0 h-full w-64 z-40 bg-[#ffffff] rounded-r-xl shadow-2xl shadow-[#071e27]/10 flex-col py-6">
+<div class="px-6 mb-8">
+<h3 class="font-inter text-sm font-semibold text-[#000666] uppercase tracking-widest">Data Selection</h3>
+</div>
+<div class="space-y-1 px-3">
+<div class="flex items-center gap-3 px-4 py-3 text-[#5a7181] hover:bg-[#f3faff] transition-colors rounded-lg cursor-pointer">
+<span class="material-symbols-outlined" data-icon="search_check">search_check</span>
+<span class="font-inter text-sm font-semibold">Detected</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 bg-[#e6f6ff] text-[#1A237E] rounded-lg cursor-pointer">
+<span class="material-symbols-outlined" data-icon="error_outline">error_outline</span>
+<span class="font-inter text-sm font-semibold">Missing</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-[#5a7181] hover:bg-[#f3faff] transition-colors rounded-lg cursor-pointer">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-inter text-sm font-semibold">Profiles</span>
+</div>
+</div>
+</div>
+</body></html>

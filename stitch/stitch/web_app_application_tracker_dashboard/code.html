@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AutoApply | Cognitive Vault Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#a3f69c",
+              "surface-container": "#dbf1fe",
+              "secondary": "#4355b9",
+              "outline-variant": "#c6c5d4",
+              "tertiary-container": "#003909",
+              "on-tertiary": "#ffffff",
+              "surface-container-high": "#d5ecf8",
+              "on-secondary-fixed": "#00105c",
+              "on-primary-fixed": "#000767",
+              "tertiary": "#002103",
+              "surface": "#f3faff",
+              "on-secondary": "#ffffff",
+              "surface-tint": "#4c56af",
+              "on-secondary-container": "#11278e",
+              "primary-fixed": "#e0e0ff",
+              "primary-container": "#1a237e",
+              "surface-bright": "#f3faff",
+              "on-tertiary-fixed": "#002204",
+              "on-surface-variant": "#454652",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#005312",
+              "on-primary-fixed-variant": "#343d96",
+              "inverse-primary": "#bdc2ff",
+              "secondary-fixed-dim": "#bac3ff",
+              "on-background": "#071e27",
+              "inverse-on-surface": "#dff4ff",
+              "error-container": "#ffdad6",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed-variant": "#293ca0",
+              "surface-container-low": "#e6f6ff",
+              "surface-variant": "#cfe6f2",
+              "secondary-fixed": "#dee0ff",
+              "tertiary-fixed-dim": "#88d982",
+              "secondary-container": "#8596ff",
+              "background": "#f3faff",
+              "surface-dim": "#c7dde9",
+              "on-surface": "#071e27",
+              "primary-fixed-dim": "#bdc2ff",
+              "on-error": "#ffffff",
+              "on-primary-container": "#8690ee",
+              "outline": "#767683",
+              "error": "#ba1a1a",
+              "primary": "#000666",
+              "inverse-surface": "#1e333c",
+              "surface-container-highest": "#cfe6f2",
+              "on-tertiary-container": "#5aa958",
+              "on-primary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Manrope", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar (Shared Component) -->
+<aside class="hidden md:flex flex-col h-screen w-64 bg-slate-50 dark:bg-slate-950 p-4 space-y-2 shadow-2xl shadow-indigo-900/5 z-20">
+<div class="mb-10 px-2 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-container flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div>
+<h1 class="font-manrope font-extrabold text-indigo-900 dark:text-indigo-100 text-lg leading-none">Cognitive Vault</h1>
+<p class="font-inter font-medium tracking-wide text-[10px] uppercase text-slate-500 mt-1">Premium Tier</p>
+</div>
+</div>
+<nav class="flex-grow space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+<span class="font-inter font-medium tracking-wide text-xs uppercase">Vault</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-200 rounded-xl shadow-sm transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="view_kanban" style="font-variation-settings: 'FILL' 1;">view_kanban</span>
+<span class="font-inter font-medium tracking-wide text-xs uppercase">Tracker</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-inter font-medium tracking-wide text-xs uppercase">Documents</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-inter font-medium tracking-wide text-xs uppercase">Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800">
+<button class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-primary-container text-white py-4 rounded-xl font-bold text-sm shadow-xl shadow-primary/20 hover:scale-[1.02] transition-all">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                New Application
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0 overflow-hidden bg-surface-container-low">
+<!-- TopNavBar (Shared Component) -->
+<header class="flex justify-between items-center w-full px-8 py-5 bg-slate-50 dark:bg-slate-900 z-10">
+<div class="flex items-center gap-8">
+<h2 class="font-manrope font-bold text-2xl text-indigo-950 dark:text-white tracking-tight">Dashboard</h2>
+<div class="hidden md:flex items-center bg-white/50 dark:bg-slate-800 rounded-full px-4 py-2 border border-outline-variant/10 w-80">
+<span class="material-symbols-outlined text-slate-400 text-xl" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-slate-400" placeholder="Search applications..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-5">
+<div class="flex items-center gap-1">
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 dark:hover:bg-slate-800 rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</div>
+<div class="h-8 w-px bg-slate-200 dark:bg-slate-700"></div>
+<button class="flex items-center gap-3 pl-2 pr-4 py-1.5 rounded-full hover:bg-slate-200/50 transition-all">
+<div class="w-8 h-8 rounded-full bg-indigo-100 overflow-hidden ring-2 ring-indigo-50">
+<img class="w-full h-full object-cover" data-alt="User profile portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG0QFZ4tC3OBrmDvTMrqkxZUfz8dcgsR9Y4rsbTkiajlgJ2yI5HX-TvRoGWi2UJTbWkR2bQPFM-rzYQpa7vUMEFsn6n0bShASWTjN5gPzXZaJ-VcWrTfaICH9y3r91vr8rTB2EOgBRDO3PgGPhuj3iwuDGxCB98eqF0SVYhxHHe3wHi6h5T1ZHHvMiXoWJt6t0TPC2QCxOlOH-db8DA151oh9aa4pVpZrr-G496SWbJ4xWEBqFDqDFpRAbdsFZmtI1xir2mfAvj5k"/>
+</div>
+<div class="text-left">
+<p class="text-xs font-bold text-indigo-900 leading-none">Marcus Vance</p>
+<p class="text-[10px] text-slate-500 leading-tight">Pro Account</p>
+</div>
+</button>
+<button class="hidden lg:block bg-indigo-50 text-indigo-700 px-4 py-2 rounded-xl text-xs font-bold border border-indigo-100 hover:bg-indigo-100 transition-colors">
+                    Upgrade
+                </button>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="flex-1 overflow-y-auto p-8 space-y-8">
+<!-- Statistics Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-full shadow-sm flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="z-10">
+<p class="text-xs font-medium text-slate-500 uppercase tracking-widest">Total Applications</p>
+<h3 class="text-4xl font-manrope font-extrabold text-primary mt-1">128</h3>
+</div>
+<div class="absolute -right-2 -bottom-2 opacity-5 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-8xl" data-icon="assignment">assignment</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-full shadow-sm flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="z-10">
+<p class="text-xs font-medium text-slate-500 uppercase tracking-widest">Response Rate</p>
+<div class="flex items-baseline gap-2">
+<h3 class="text-4xl font-manrope font-extrabold text-secondary mt-1">24%</h3>
+<span class="text-tertiary-fixed-dim text-xs font-bold">+2.4%</span>
+</div>
+</div>
+<div class="absolute -right-2 -bottom-2 opacity-5 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-8xl" data-icon="analytics">analytics</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-full shadow-sm flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="z-10">
+<p class="text-xs font-medium text-slate-500 uppercase tracking-widest">Interview Rate</p>
+<h3 class="text-4xl font-manrope font-extrabold text-tertiary mt-1">8.2%</h3>
+</div>
+<div class="absolute -right-2 -bottom-2 opacity-5 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-8xl" data-icon="groups">groups</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-full shadow-sm flex flex-col justify-between h-32 relative overflow-hidden group border-2 border-primary/5">
+<div class="z-10">
+<p class="text-xs font-medium text-slate-500 uppercase tracking-widest">Pending Deadlines</p>
+<h3 class="text-4xl font-manrope font-extrabold text-error mt-1">04</h3>
+</div>
+<div class="absolute -right-2 -bottom-2 opacity-5 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-8xl" data-icon="alarm">alarm</span>
+</div>
+</div>
+</section>
+<!-- Kanban Tracker -->
+<section class="flex-1 flex flex-col min-h-[600px]">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-manrope font-bold text-xl text-primary">Application Tracker</h3>
+<div class="flex items-center gap-2 bg-surface-container-high p-1 rounded-xl">
+<button class="px-4 py-1.5 bg-white shadow-sm rounded-lg text-xs font-bold text-primary">Board</button>
+<button class="px-4 py-1.5 text-xs font-bold text-slate-500 hover:text-primary transition-colors">List</button>
+</div>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-6 hide-scrollbar">
+<!-- Column: Saved -->
+<div class="flex-shrink-0 w-80 flex flex-col gap-4">
+<div class="flex items-center justify-between px-2">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-slate-300"></span>
+<h4 class="font-manrope font-bold text-sm uppercase tracking-wider text-slate-600">Saved</h4>
+<span class="bg-slate-200 text-slate-600 text-[10px] font-bold px-1.5 py-0.5 rounded-md">12</span>
+</div>
+<button class="text-slate-400 hover:text-primary"><span class="material-symbols-outlined text-lg" data-icon="more_horiz">more_horiz</span></button>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-full shadow-sm border-l-4 border-slate-300 space-y-3 hover:shadow-md transition-all cursor-grab active:cursor-grabbing">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center p-2">
+<img class="w-full grayscale opacity-70" data-alt="Spotify logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMpXzq4gPhRwSCsMVtUCfBePCfi9TQRhxUZa4_676NpY0zLkIyghMJlPpscytprfhCBxgZacaEJ_teWvB354Z1rJ3HLPSwoutYUmVIavoYxXh_vG0LBj3oKAZC_y87N1irnJ_NQZS5sGYPrK1BzqSUHf8BsSC4MN0AtypiSqiI69Y05Q7gogO7LDymmTNDkunFGOAlD5QxR77lRDzQafBEnOLKiNgomBIRkngZihn-xFcX0o41NBMO5vymLTWGPsYOM3V1zFDpU7o"/>
+</div>
+<div class="flex items-center gap-1 bg-tertiary-fixed/30 px-2 py-0.5 rounded-full" title="AI Auto-filled">
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed-dim" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-[9px] font-bold text-on-tertiary-fixed-variant uppercase">AI</span>
+</div>
+</div>
+<div>
+<h5 class="font-manrope font-bold text-primary text-base">Senior UI Engineer</h5>
+<p class="text-xs text-slate-500 font-medium">Spotify • Stockholm, SE</p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-50">
+<span class="text-[10px] font-bold text-slate-400">Saved 2d ago</span>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-surface-container border-2 border-white flex items-center justify-center text-[8px] font-bold">JD</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Column: Applied -->
+<div class="flex-shrink-0 w-80 flex flex-col gap-4">
+<div class="flex items-center justify-between px-2">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<h4 class="font-manrope font-bold text-sm uppercase tracking-wider text-slate-600">Applied</h4>
+<span class="bg-secondary-fixed text-secondary text-[10px] font-bold px-1.5 py-0.5 rounded-md">28</span>
+</div>
+<button class="text-slate-400 hover:text-primary"><span class="material-symbols-outlined text-lg" data-icon="more_horiz">more_horiz</span></button>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-full shadow-sm border-l-4 border-secondary space-y-3 hover:shadow-md transition-all">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center p-2">
+<img class="w-full" data-alt="Google logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcke7ySz8JXPVaIsnjogenDK8dmgBSihcFVh5yIjLSvtr2dd1sGXFEovDeJgK531Pmf3DLFylNclRdRP-SQToOae2fMoI5GRnkPJE-AGKQzCcGqMWPd6iQSHPcgYqRm2iy4mVQyZuGPgQMeS0cO68wzxnvjx0srpHHR4AaOWwvMMMCi0H9ZNY0qRfCCGvMX4Vtw7BHgdiMvMZjgQ2bQ9Z0W1_VfGrRfP6erqbKjkHHmlF-YdmlFHxkIvODsWnnrjavdnJLSRxeCQc"/>
+</div>
+<div class="flex items-center gap-1 bg-tertiary-fixed/30 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed-dim" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-[9px] font-bold text-on-tertiary-fixed-variant uppercase">AI</span>
+</div>
+</div>
+<div>
+<h5 class="font-manrope font-bold text-primary text-base">Senior UX Designer</h5>
+<p class="text-xs text-slate-500 font-medium">Google • Mountain View, CA</p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-50">
+<span class="text-[10px] font-bold text-slate-400">Applied Oct 24</span>
+<div class="bg-secondary-fixed text-on-secondary-fixed text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-tighter">Under Review</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-full shadow-sm border-l-4 border-secondary space-y-3 hover:shadow-md transition-all">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center p-2">
+<img class="w-full" data-alt="Airbnb logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU5U07oeWRmXBrRFgmjQcdTP5LXDAyWp-kjjLtwmWIlryrY550bwgTPKJAN1Dk75WFZEqI5vfjoq1xaKkWQbBVEyHUy49CQjEZF0kkcE1CQt72sSdb6Ph1gHbqksRUg_q0QKpFUAIRxSXfMo8edn0obcNJXXPjShexPhzeqQPy6KLdfJIEwyQTgTJhHCesoUaB-vlQNH66MAo9kAgvRwDp2WPqqpv2EXda2cj8k-1LNO6pmn6aNw04yW90r05rfpZxpQrI5S_1ujY"/>
+</div>
+</div>
+<div>
+<h5 class="font-manrope font-bold text-primary text-base">Product Lead</h5>
+<p class="text-xs text-slate-500 font-medium">Airbnb • Remote</p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-50">
+<span class="text-[10px] font-bold text-slate-400">Applied Oct 22</span>
+<div class="bg-secondary-fixed text-on-secondary-fixed text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-tighter">Applied</div>
+</div>
+</div>
+</div>
+<!-- Column: Phone Screen -->
+<div class="flex-shrink-0 w-80 flex flex-col gap-4">
+<div class="flex items-center justify-between px-2">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<h4 class="font-manrope font-bold text-sm uppercase tracking-wider text-slate-600">Phone Screen</h4>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold px-1.5 py-0.5 rounded-md">05</span>
+</div>
+<button class="text-slate-400 hover:text-primary"><span class="material-symbols-outlined text-lg" data-icon="more_horiz">more_horiz</span></button>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-full shadow-md border-l-4 border-tertiary-fixed-dim ring-2 ring-tertiary-fixed/20 space-y-3">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center p-2">
+<img class="w-full" data-alt="Stripe logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz7ziF6_o0SkM7Alg6zkEO_Fi_5i6h03hrKKUxJZPlZm9gpR028puzUasq3e7C-ZvpiEe0I2OaGCE3YRcQ0OQ6uXUpcWxuCPxP89nLj8-Z6_-7Vq_zvo_1Z3v6UrBbwiiSKHksqFNAHUCv92jAd8omAXmURSP6xGVieSMejFsmuTLJjPmspv6caW1Lra2FzTo6gEwUlvTNxp2q8Bu4jaVBCmfYeyZZdPmjaHYmF8H_FVQtBnVZA4ML_PuN5Sh7YrCvVvVFKBs5LyQ"/>
+</div>
+<div class="bg-tertiary-container text-tertiary-fixed text-[10px] font-bold px-2 py-1 rounded-lg">TODAY</div>
+</div>
+<div>
+<h5 class="font-manrope font-bold text-primary text-base">Systems Architect</h5>
+<p class="text-xs text-slate-500 font-medium">Stripe • San Francisco, CA</p>
+</div>
+<div class="flex items-center gap-2 pt-2 text-xs text-on-tertiary-fixed-variant bg-tertiary-fixed/10 p-2 rounded-xl border border-tertiary-fixed-dim/20">
+<span class="material-symbols-outlined text-sm" data-icon="event">event</span>
+<span class="font-bold">Oct 26, 2:30 PM EST</span>
+</div>
+</div>
+</div>
+<!-- Column: Interview -->
+<div class="flex-shrink-0 w-80 flex flex-col gap-4">
+<div class="flex items-center justify-between px-2">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<h4 class="font-manrope font-bold text-sm uppercase tracking-wider text-slate-600">Interview</h4>
+<span class="bg-primary-fixed text-primary text-[10px] font-bold px-1.5 py-0.5 rounded-md">02</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-full shadow-sm border-l-4 border-primary space-y-3">
+<div class="flex justify-between items-start">
+<div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center p-2">
+<img class="w-full" data-alt="Amazon logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0n8gw6vP8vQVjV-FIi4uvRF9EH8Y2Uv5KWyHhSKOrwSL4oHeq4QYCy-E1ExlGUGYf81_D0Q5bZKcyTDpupTAxjkvaakcQT9F5qPa6zA3fUIrRBy0XNTIz21OZi5PFGfZ_lDOqKVhK5R6vv0a6GOLos-5PKPze-1N0AJSlK4Pa73JL5v2SFKh6jok4L7ZNTvQ-12Bc3-sipWDUb_CQSl001TpTyGg2oQEggut2mLAjpEaWtTxfhNeAn8Jjle-qenm7vSFJfTtpewU"/>
+</div>
+</div>
+<div>
+<h5 class="font-manrope font-bold text-primary text-base">Design Manager</h5>
+<p class="text-xs text-slate-500 font-medium">Amazon • Seattle, WA</p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-slate-50">
+<span class="text-[10px] font-bold text-slate-400">Round 3 of 5</span>
+<div class="bg-primary-container text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase">Onsite</div>
+</div>
+</div>
+</div>
+<!-- Column: Offer -->
+<div class="flex-shrink-0 w-80 flex flex-col gap-4">
+<div class="flex items-center justify-between px-2">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<h4 class="font-manrope font-bold text-sm uppercase tracking-wider text-slate-600">Offer</h4>
+<span class="bg-tertiary-fixed-dim text-on-tertiary-container text-[10px] font-bold px-1.5 py-0.5 rounded-md">01</span>
+</div>
+</div>
+<div class="bg-gradient-to-br from-tertiary-fixed-dim to-tertiary-fixed p-5 rounded-full shadow-xl shadow-tertiary-fixed-dim/20 space-y-3 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 text-tertiary opacity-10 group-hover:scale-125 transition-transform duration-500">
+<span class="material-symbols-outlined text-6xl" data-icon="celebration">celebration</span>
+</div>
+<div class="flex justify-between items-start z-10 relative">
+<div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center p-2">
+<img class="w-full" data-alt="Figma logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfp5pYKGndXMZLOr06bMtX7p3gX3QygM1YDuasyqQRl6TBYKhzZ-heJa9wW6jFLwUOUZM9gL491ak8C8OWbdMCVRY8n5rns78dbVJJlYBVya-HQM-mp36ewZ7AP30ymO0DD-jHzJ5dghMs349LBmQBFXMQh5XD0wJ-bGadE1YttnQfpD4PUFeDKqwRxSj9cHodlRQBwBm4DGpYNVAflLD_G03Da2Y11rIros7e55cP998JcwQ6BxKOV3tDMKOb8QMVDpvD2o81sWw"/>
+</div>
+</div>
+<div class="z-10 relative">
+<h5 class="font-manrope font-bold text-tertiary text-base">Staff Product Designer</h5>
+<p class="text-xs text-tertiary/70 font-bold">Figma • London, UK</p>
+</div>
+<div class="flex items-center justify-between pt-2 border-t border-tertiary/10 z-10 relative">
+<span class="text-[10px] font-bold text-tertiary/60">Expires in 3 days</span>
+<div class="bg-tertiary text-white text-[9px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest">Review Offer</div>
+</div>
+</div>
+</div>
+<!-- Column: Rejected -->
+<div class="flex-shrink-0 w-80 flex flex-col gap-4 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all">
+<div class="flex items-center justify-between px-2">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<h4 class="font-manrope font-bold text-sm uppercase tracking-wider text-slate-600">Rejected</h4>
+<span class="bg-error-container text-on-error-container text-[10px] font-bold px-1.5 py-0.5 rounded-md">45</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-full shadow-sm space-y-3">
+<div class="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center p-2">
+<img class="w-full opacity-30" data-alt="Meta logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3R3a_pLVaJXPXC-zdgxWkdVrg0MxOt450QiZlDQDONo79jQfmTcG04Ryx5xF9P1CIHr1Uj6aJCLoz3NdXQ0rFVOrl0hvTRoGk1owMXmnlxo3a9nL9UalKiMMZbNIDyDHCGqZ8Q3OHamARjjp-eFfhNhx5jA_yZHxb-3XDHtepAqUW3rx63Jk8cTVG87i-6nWdTwQngY1xk-nkc88jSfgVM5rzQIRN0ltMyzGhWsEIkkxTErV4xwfxi5ombgO-sdlGasLKDK5wEjI"/>
+</div>
+<div>
+<h5 class="font-manrope font-bold text-slate-400 text-base">VR Interface Lead</h5>
+<p class="text-xs text-slate-400 font-medium">Meta • Menlo Park</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Floating Action Button - AI Command Center -->
+<button class="fixed bottom-8 right-8 w-16 h-16 rounded-full bg-primary text-white shadow-2xl shadow-primary/30 flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-30 overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined relative z-10 text-3xl" data-icon="smart_toy" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</button>
+</body></html>
